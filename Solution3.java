@@ -1,7 +1,7 @@
 //프로그래머스 Lv2 올바른 괄호
 import java.util.Stack;
 
-class Solution {
+public class Solution3 {
     boolean solution(String s) {
         
         Stack<Character> stack = new Stack<>();

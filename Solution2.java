@@ -11,17 +11,13 @@
 //         하지만 배열의 크기가 작은 경우는 기본 정렬보다 느릴 수 있기에 테스트가 필요하다.
 //         시간초과의 경우 정렬의 성능의 향상만으로 해결되지 않을까 싶어서
 //         정렬의 초점을 두고 다시 정렬을 하여 정답을 구했습니다.
-        
 
 
 import java.util.Arrays;
-import java.util.Collections;
 
-class Solution
-{
-    public int solution(int []A, int []B)
-    {
-        
+public class Solution2 {
+    public int solution(int[] A, int[] B) {
+
         int answer = 0;
 
 // 첫번째 시도        
@@ -32,16 +28,16 @@ class Solution
 //         Integer[] BInteger = Arrays.stream(B).boxed().toArray(Integer[]::new);
 //         Arrays.sort(BInteger, Collections.reverseOrder());
 
-        
+
 //         for(int i = 0; i<A.length; i++){
 //             answer += A[i]*BInteger[i];
 //         }
 //         return answer;
-        
+
         // A와 B를 병렬 정렬
         Arrays.parallelSort(A);
         Arrays.parallelSort(B);
-        
+
         // 정렬된 배열을 순서대로 곱하고 합계 계산
         int n = A.length;
         for (int i = 0; i < n; i++) {
@@ -49,6 +45,6 @@ class Solution
         }
 
         return answer;
-    } 
+    }
 
 }
