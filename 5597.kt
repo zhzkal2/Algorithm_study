@@ -6,7 +6,7 @@ fun main(){
     val submittedStudents = mutableSetOf<Int>()
 
     repeat(28){
-        val number = readLine()!!.toInt()
+        val number = readln().toInt()
         submittedStudents.add(number)
     }
 
@@ -16,4 +16,5 @@ fun main(){
     val result = notSubmitted.sorted()
     println(result[0])
     println(result[1])
+
 }
