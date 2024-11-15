@@ -1,3 +1,5 @@
+package kotlin
+
 // 5597 과제 안내신 분..?
 fun main(){
 

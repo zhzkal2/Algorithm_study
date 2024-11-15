@@ -1,3 +1,5 @@
+package kotlin
+
 fun countCabbageGroups(n: Int, m: Int, cabbagePositions: List<Pair<Int, Int>>): Int {
     // 코틀린은 카멜케이스로 작성이 기본이다.
     // val field = Array(m){booleanArray(n)} 오류발생
