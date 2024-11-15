@@ -55,43 +55,42 @@ fun call(num1: Int, num2: Int) {
     //num2 최소 사용가능한 거리 코스트
 
     val pq = PriorityQueue<Pair<Int, Int>>(compareBy { it.first })
+    val visited = BooleanArray(house_cost.size) // 방문한 집을 추가로 방문하지 않기 위해서 조건문의 변수
+    var minCost = house_cost[num1 - 1]
+
     pq.add(Pair(house_cost[num1 - 1], num1 - 1))  // 시작 집 val1 비용 val2 위치
 
-    val visited = BooleanArray(house_cost.size) // 방문한 집을 추가로 방문하지 않기 위해서 조건문의 변수
+    var totalTime = 0  // 이동 시간 초기화
+
 
     visited[num1 - 1] = true //시작집이므로 방문한것으로 취급
-    var minCost = house_cost[num1 - 1]  //시작집 설정
 
-    //왼쪽 검사
-    var totalTime = 0
-    var currentHouse = num1 - 1
-    while (currentHouse > 0 && totalTime + house_dis[currentHouse - 1] <= num2) {
-        totalTime += house_dis[currentHouse - 1]
-        currentHouse--
-        pq.add(Pair(house_cost[currentHouse], currentHouse))
-        visited[currentHouse] = true
-    }
 
-    //오른쪽 검사
-    totalTime = 0
-    currentHouse = num1 - 1
-    while (currentHouse < house_cost.size -1 && totalTime + house_dis[currentHouse] <= num2) {
-        totalTime += house_dis[currentHouse]
-        currentHouse++
-        pq.add(Pair(house_cost[currentHouse], currentHouse))
-        visited[currentHouse] = true
-    }
-
-    //결과 도출
     while (pq.isNotEmpty()) {
         val (cost, house) = pq.poll()
+
+        // 현재 집의 최소 비용을 갱신
         if (cost < minCost) minCost = cost
+
+        // 왼쪽 집으로 이동 (이전 집)
+        if (house > 0 && !visited[house - 1] && totalTime + house_dis[house - 1] <= num2) {
+            visited[house - 1] = true
+            totalTime += house_dis[house - 1]  // 이동 시간 갱신
+            pq.add(Pair(house_cost[house - 1], house - 1))  // 큐에 집 추가
+            totalTime = 0
+        }
+
+
+        // 오른쪽 집으로 이동 (다음 집)
+        if (house < house_cost.size - 1 && !visited[house + 1] && totalTime + house_dis[house] <= num2) {
+            visited[house + 1] = true
+            totalTime += house_dis[house]  // 이동 시간 갱신
+            pq.add(Pair(house_cost[house + 1], house + 1))  // 큐에 집 추가
+        }
     }
     println(minCost)
 
-
 }
-
 
 
 
