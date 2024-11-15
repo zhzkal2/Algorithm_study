@@ -1,4 +1,4 @@
-package java;
+package java_algo;
 
 //프로그래머스 없는 숫자 더하기
 //문제 설명

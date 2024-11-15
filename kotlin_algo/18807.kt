@@ -1,4 +1,4 @@
-package kotlin
+package kotlin_algo
 
 fun main(){
     val (a, b) = readln().split(" ").map { it.toInt() }

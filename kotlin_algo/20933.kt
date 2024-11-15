@@ -1,4 +1,4 @@
-package kotlin
+package kotlin_algo
 
 import java.util.*
 

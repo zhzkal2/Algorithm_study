@@ -1,4 +1,4 @@
-package java;//프로그래머스 Lv2 올바른 괄호
+package java_algo;//프로그래머스 Lv2 올바른 괄호
 
 import java.util.Stack;
 
