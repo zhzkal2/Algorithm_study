@@ -2,7 +2,7 @@ package kotlin_algo
 
 fun main(){
 
-    val n = readLine()!!.toInt()
+    val n = readln().toInt()
     val arrayA = readLine()!!.split(" ").map { it.toInt() }.sorted()
     val m = readLine()!!.toInt()
     val queries = readLine()!!.split(" ").map { it.toInt() }
