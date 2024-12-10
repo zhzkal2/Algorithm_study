@@ -1,13 +1,15 @@
+package kotlin_algo
+
 fun solution(s: String, skip: String, index: Int): String {
-    
-        var answer: String = ""
+
+    var answer: String = ""
 
 
-        repeat(s.length) { i ->
+    repeat(s.length) { i ->
 
-                var current = s[i]
-                var count = 0
-        
+        var current = s[i]
+        var count = 0
+
 
         while (count < index) {
             current++
@@ -21,7 +23,7 @@ fun solution(s: String, skip: String, index: Int): String {
             }
         }
         answer += current
-        }
+    }
 
 
 

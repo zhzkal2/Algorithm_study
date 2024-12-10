@@ -1,6 +1,6 @@
 import java.time.LocalDate
 //프로그래머스 개인정보 수집 유효기간
-class Solution {
+class Solution1 {
     fun solution(today: String, terms: Array<String>, privacies: Array<String>): IntArray {
         
         //[2022,05,19] [0,1,2]
