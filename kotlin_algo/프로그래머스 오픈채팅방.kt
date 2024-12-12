@@ -12,6 +12,7 @@ fun main() {
     println(solution(record).joinToString("\n"))
 }
 
+//1번 방식 아이디 선 변경
 fun solution(record: Array<String>): Array<String> {
     val userMap = mutableMapOf<String, String>()  // uid -> nickname
     val result = ArrayList<String>()
